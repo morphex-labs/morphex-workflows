@@ -436,7 +436,7 @@ jobs:
           ✍️ [${{ inputs.network}} #${{ env.NONCE }}](${{ env.SAFE_LINK }}) \`${{ steps.get-pr-title.outputs.result}}\`
           Sender: ${{ steps.get-pr-author.outputs.result }}
           Description: \`${{ steps.get-pr-body.outputs.result }}\`
-          Review [the code](${{ steps.pr-url.outputs.pr-url }}), verify [the output](${{ steps.vars.outputs.run-url }}), and [sign here](${{ env.SAFE_LINK }})
+          Review [the code](${{ steps.pr-url.outputs.pr-url }}), verify [the output](${{ steps.vars.outputs.run-url }}), and [sign here](<${{ env.SAFE_LINK }}>)
           EOF
           )
           echo "DISCORD_MESSAGE<<EOF" >> $GITHUB_ENV
