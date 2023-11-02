@@ -56,6 +56,10 @@ on:
         required: false
         default: 'false'
         type: string
+      use_discord:
+        required: false
+        default: 'false'
+        type: string
       cached_runner:
         required: false
         default: 'false'
