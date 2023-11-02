@@ -430,7 +430,7 @@ jobs:
       continue-on-error: true
     
     - name: Create Discord message
-      if: ${{ inputs.send  == 'false' && inputs.use_discord == 'true' }}
+      if: ${{ inputs.send  == 'true' && inputs.use_discord == 'true' }}
       run: |
           DISCORD_MESSAGE=$(cat << EOF
           ✍️ [${{ inputs.network}} #${{ env.NONCE }}](${{ env.SAFE_LINK }}) \`${{ steps.get-pr-title.outputs.result}}\`
@@ -446,7 +446,7 @@ jobs:
     - name: Actions for Discord
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      if: ${{ inputs.send == 'false' && inputs.use_discord == 'true' }}
+      if: ${{ inputs.send == 'true' && inputs.use_discord == 'true' }}
       uses: Ilshidur/action-discord@0.3.2
       with:
         args: '${{ env.DISCORD_MESSAGE }}'
