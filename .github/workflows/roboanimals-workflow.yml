@@ -449,7 +449,7 @@ jobs:
       if: ${{ inputs.send == 'true' && inputs.use_discord == 'true' }}
       uses: Ilshidur/action-discord@0.3.2
       with:
-        args: '<@&896917953784717362> \n${{ env.DISCORD_MESSAGE }}'
+        args: '<@&896917953784717362> $\n ${{ env.DISCORD_MESSAGE }}'
     
     - name: Edit comment with full run message
       if: ${{ inputs.send  == 'true' && inputs.from_pr == 'true' }}
